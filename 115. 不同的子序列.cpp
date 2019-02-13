@@ -12,7 +12,7 @@
 class Solution {
 public:
     int numDistinct(string s, string t) {
-        vector<int> ans(t.size() + 1, 0);
+        vector<long long> ans(t.size() + 1, 0);
         vector <vector<int>> chPos(128);
         int tSize = t.size();
         for (int i = 0; i < tSize; i++)
@@ -28,6 +28,6 @@ public:
                 ans[id] += ans[id - 1];
             }
         }
-        return ans[t.size()];
+        return int(ans[t.size()]);
     }
 };
